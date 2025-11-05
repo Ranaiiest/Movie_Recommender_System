@@ -2,18 +2,28 @@
 
 A content-based movie recommendation system built using NLP techniques and cosine similarity, deployed with Streamlit.
 
+## 🎊 Example Screenshot
+![Movie Recommender Screenshot](./asset/example.png)
+
 ## ✨ Features
-- Search for a movie and get top 5 similar movie recommendations.
-- Uses **cosine similarity** on movie feature vectors for recommendations.
-- Dataset preprocessing and feature engineering for better accuracy.
-- Fast and interactive UI built with Streamlit.
+- 🔍 **Search any movie** and instantly get up to **5 similar movie recommendations**.
+- 🎬 **Movie details** with posters, ratings, release date, and overview fetched dynamically from TMDB API.
+- 🎥 **Trailer links** from YouTube and **fallback support using OMDb API** for missing data.
+- 💾 **Precomputed recommendations** for lightning-fast responses (no recomputation needed).
+- 🎨 Modern, responsive UI built with Streamlit — supports random movie suggestion and caching for performance.
+- ⚡ **Caching and retry logic** ensures consistent performance even during API rate limits.
+
+---
 
 ## 🛠 Tech Stack
-- **Python** (pandas, numpy, scikit-learn)
-- **Streamlit** (for UI)
-- **NLP** (TF-IDF Vectorization)
-- **Cosine Similarity** (from scikit-learn)
-- Dataset: TMDB or similar public movie dataset
+- **Python 3.10+**
+- **pandas**, **numpy** — data handling and preprocessing  
+- **scikit-learn** — content-based recommendation using **CountVectorizer + cosine similarity**
+- **Streamlit** — fast, interactive frontend web app
+- **Requests** — to integrate **TMDB** and **OMDb APIs**
+- **TMDB API** — for high-quality posters, trailers, and details
+- **OMDb API** — fallback metadata for unavailable TMDB results
+
 
 ## 🌐 Live Demo
 [Click here to view the app](https://movie-recommender-system-aynx.onrender.com/)
@@ -48,9 +58,10 @@ A content-based movie recommendation system built using NLP techniques and cosin
 ```plaintext
 movie-recommendation-system/
 │-- app.py                 # Main Streamlit app
-│-- preprocessing.py       # Data preprocessing & similarity matrix generation
+│-- mrs_updated.ipynb       # Data preprocessing & similarity matrix generation
 │-- movies.csv             # Dataset
-│-- similarity.pkl         # Precomputed similarity matrix
+│-- recommendations.csv    # Precomputed recommendations
+│-- asset/                 # Assets like images and screenshots
 │-- requirements.txt       # Python dependencies
 │-- README.md              # Project documentation
 
